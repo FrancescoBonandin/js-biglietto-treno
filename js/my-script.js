@@ -70,7 +70,14 @@ else{
 
         ticketPrice = ticketPrice - discount;
 
-        document.querySelector("#price").innerHTML = ticketPrice.toFixed(2) + "€";
+        
+        ticketPrice = ticketPrice.toFixed(2);
+
+        ticketPrice = String(ticketPrice).replace(".",",");
+
+        console.log('ticketPrice', ticketPrice, typeof ticketPrice);
+
+        document.querySelector("#price").innerHTML = ticketPrice + "€";
 
     }
 
@@ -87,7 +94,14 @@ else{
 
         ticketPrice = ticketPrice - discount;
 
-        document.querySelector("#price").innerHTML = ticketPrice.toFixed(2) + "€";
+        
+        ticketPrice = ticketPrice.toFixed(2);
+
+        ticketPrice = String(ticketPrice).replace(".",",");
+
+        console.log('ticketPrice', ticketPrice, typeof ticketPrice);
+
+        document.querySelector("#price").innerHTML = ticketPrice + "€";
 
     }
 
@@ -103,8 +117,41 @@ else{
 
         ticketPrice = ticketPrice - discount;
 
-        document.querySelector("#price").innerHTML = ticketPrice.toFixed(2) + "€";
+        ticketPrice = ticketPrice.toFixed(2);
+
+        ticketPrice = String(ticketPrice).replace(".",",");
+
+        console.log('ticketPrice', ticketPrice, typeof ticketPrice);
+
+        document.querySelector("#price").innerHTML = ticketPrice + "€";
 
 
     }
+    
+    
 }
+
+    // console.log(typeof parseInt(document.querySelector("#price").innerHTML));
+    
+    // if(typeof parseInt(document.querySelector("#price").innerHTML) == "number" ){
+        
+    //    let buy = prompt("Vuoi procedere all'acquisto? (si/no)");
+    
+    //    if(buy === "si"){
+    //     alert("Attendere, prego")
+    //    }
+       
+    //    else if(buy === "no"){
+    //     alert("Ricaricare la pagina per ulteriori biglietti oppure chiudere la pagina ")
+    //    }
+    
+    //    else{
+    //     alert("input non riconosciuto, prego ricominciare DA CAPO")
+    //    }
+    // }
+
+       
+    // else {
+    //     alert("Ricaricare la pagina per ulteriori biglietti oppure chiudere la pagina ")
+    // }
+
