@@ -1,6 +1,8 @@
 
 let distance = prompt("Quanti km devi percorrere?(scrivi in numeri per favore)");
+
 const pricingPerKm = 0.21;
+
 const refresh = "Ricarica la pagina, per favore"
 
 distance = distance.replace(",",".")
@@ -13,6 +15,11 @@ distance = distance.toFixed(2);
 
 // console.log("distance", distance, typeof distance);
 
+distance = parseFloat(distance);
+
+// console.log("distance", distance, typeof distance);
+
+
 if(isNaN(distance) ){
     alert("Mi dispiace non accettiamo valori testuali o campi vuoti, ricomincia");
  
@@ -21,7 +28,9 @@ if(isNaN(distance) ){
 }
 
 else if(distance >= +Infinity || distance <= -Infinity || distance == undefined ){
+
     alert("Non si accettano valori non definiti")
+
 }
 
 else if(distance < 0){
@@ -34,6 +43,7 @@ else if(distance < 0){
 }
 
 else if(distance == 0 ){
+
     alert("Cosa prendi a fare il treno?");
 
     document.querySelector("#price").innerHTML = refresh;
@@ -44,6 +54,7 @@ else if(distance == 0 ){
 else{
 
     let age = prompt("Quanti anni hai?(scrivi in numeri per favore)");
+    
     age = parseInt(age);
     
     // console.log("age", age, typeof age);
@@ -64,17 +75,21 @@ else{
     }
     
     else if(age == 0 ){
+
         alert("Crescono così in fretta...Ricomincia, burlone");
 
         document.querySelector("#price").innerHTML = refresh;
+
     }
 
     else if( age >= +Infinity || age == undefined || age <= -Infinity ){
+
         alert("Non si accettano valori non definiti")
     }
 
 
     else if(age < 18  && age > 0){
+
         alert ("Hai diritto al 20% di sconto!");
 
         let ticketPrice = pricingPerKm * distance ;
@@ -84,8 +99,7 @@ else{
         // console.log("discount", discount, typeof discount);
 
         ticketPrice = ticketPrice - discount;
-
-        
+ 
         ticketPrice = ticketPrice.toFixed(2);
 
         ticketPrice = String(ticketPrice).replace(".",",");
@@ -97,18 +111,16 @@ else{
     }
 
     else if(age >= 65 && age < +Infinity){
+
         alert ("Hai diritto al 40% di sconto!");
 
         let ticketPrice = pricingPerKm * distance ;
         
         let discount = (ticketPrice / 100) * 40;
-
-
+    
         // console.log("discount", discount, typeof discount);
 
-
         ticketPrice = ticketPrice - discount;
-
         
         ticketPrice = ticketPrice.toFixed(2);
 
@@ -139,7 +151,6 @@ else{
         // console.log('ticketPrice', ticketPrice, typeof ticketPrice);
 
         document.querySelector("#price").innerHTML = ticketPrice + "€";
-
 
     }
     
