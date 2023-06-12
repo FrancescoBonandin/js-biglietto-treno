@@ -4,13 +4,14 @@ const pricingPerKm = 0.21;
 const refresh = "Ricarica la pagina, per favore"
 
 distance = distance.replace(",",".")
+
 distance = parseFloat(distance);
 
-console.log("distance", distance, typeof distance);
+// console.log("distance", distance, typeof distance);
 
 distance = distance.toFixed(2);
 
-console.log("distance", distance, typeof distance);
+// console.log("distance", distance, typeof distance);
 
 if(isNaN(distance)){
     alert("Mi dispiace non accettiamo valori testuali o campi vuoti, ricomincia");
@@ -40,7 +41,7 @@ else{
     let age = prompt("Quanti anni hai?(scrivi in numeri per favore)");
     age = parseInt(age);
     
-    console.log("age", age, typeof age);
+    // console.log("age", age, typeof age);
 
     if(isNaN(age)){
         alert("Mi dispiace non accettiamo valori testuali o campi vuoti, ricomincia");
@@ -71,7 +72,7 @@ else{
         
         let discount = (ticketPrice / 100) * 20;
 
-        console.log("discount", discount, typeof discount);
+        // console.log("discount", discount, typeof discount);
 
         ticketPrice = ticketPrice - discount;
 
@@ -80,7 +81,7 @@ else{
 
         ticketPrice = String(ticketPrice).replace(".",",");
 
-        console.log('ticketPrice', ticketPrice, typeof ticketPrice);
+        // console.log('ticketPrice', ticketPrice, typeof ticketPrice);
 
         document.querySelector("#price").innerHTML = ticketPrice + "€";
 
@@ -94,7 +95,7 @@ else{
         let discount = (ticketPrice / 100) * 40;
 
 
-        console.log("discount", discount, typeof discount);
+        // console.log("discount", discount, typeof discount);
 
 
         ticketPrice = ticketPrice - discount;
@@ -104,7 +105,7 @@ else{
 
         ticketPrice = String(ticketPrice).replace(".",",");
 
-        console.log('ticketPrice', ticketPrice, typeof ticketPrice);
+        // console.log('ticketPrice', ticketPrice, typeof ticketPrice);
 
         document.querySelector("#price").innerHTML = ticketPrice + "€";
 
@@ -118,7 +119,7 @@ else{
         
         let discount = (ticketPrice / 100) * 0;
 
-        console.log("discount", discount, typeof discount);
+        // console.log("discount", discount, typeof discount);
 
         ticketPrice = ticketPrice - discount;
 
@@ -126,7 +127,7 @@ else{
 
         ticketPrice = String(ticketPrice).replace(".",",");
 
-        console.log('ticketPrice', ticketPrice, typeof ticketPrice);
+        // console.log('ticketPrice', ticketPrice, typeof ticketPrice);
 
         document.querySelector("#price").innerHTML = ticketPrice + "€";
 
@@ -135,6 +136,8 @@ else{
     
     
 }
+
+// ----------------NON FUNZIONA COME VORREI------------
 
     // console.log(typeof parseInt(document.querySelector("#price").innerHTML));
     
