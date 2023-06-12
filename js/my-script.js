@@ -81,7 +81,7 @@ else{
 
     }
 
-    else if(age > 65){
+    else if(age >= 65){
         alert ("Hai diritto al 40% di sconto!");
 
         let ticketPrice = pricingPerKm * distance ;
