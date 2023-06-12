@@ -13,11 +13,15 @@ distance = distance.toFixed(2);
 
 // console.log("distance", distance, typeof distance);
 
-if(isNaN(distance)){
+if(isNaN(distance) ){
     alert("Mi dispiace non accettiamo valori testuali o campi vuoti, ricomincia");
  
     document.querySelector("#price").innerHTML = refresh;
 
+}
+
+else if(distance >= +Infinity || distance <= -Infinity || distance == undefined ){
+    alert("Non si accettano valori non definiti")
 }
 
 else if(distance < 0){
@@ -35,6 +39,7 @@ else if(distance == 0 ){
     document.querySelector("#price").innerHTML = refresh;
 
 }
+
 
 else{
 
@@ -64,8 +69,12 @@ else{
         document.querySelector("#price").innerHTML = refresh;
     }
 
+    else if( age >= +Infinity || age == undefined || age <= -Infinity ){
+        alert("Non si accettano valori non definiti")
+    }
 
-    else if(age < 18){
+
+    else if(age < 18  && age > 0){
         alert ("Hai diritto al 20% di sconto!");
 
         let ticketPrice = pricingPerKm * distance ;
@@ -87,7 +96,7 @@ else{
 
     }
 
-    else if(age >= 65){
+    else if(age >= 65 && age < +Infinity){
         alert ("Hai diritto al 40% di sconto!");
 
         let ticketPrice = pricingPerKm * distance ;
