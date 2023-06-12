@@ -3,12 +3,17 @@ let distance = prompt("Quanti km devi percorrere?(scrivi in numeri per favore)")
 const pricingPerKm = 0.21;
 const refresh = "Ricarica la pagina, per favore"
 
-distance = parseInt(distance)
+distance = distance.replace(",",".")
+distance = parseFloat(distance);
+
+console.log("distance", distance, typeof distance);
+
+distance = distance.toFixed(2);
 
 console.log("distance", distance, typeof distance);
 
 if(isNaN(distance)){
-    alert("Mi dispiace non accettiamo valori testuali, ricomincia");
+    alert("Mi dispiace non accettiamo valori testuali o campi vuoti, ricomincia");
  
     document.querySelector("#price").innerHTML = refresh;
 
@@ -33,12 +38,12 @@ else if(distance == 0 ){
 else{
 
     let age = prompt("Quanti anni hai?(scrivi in numeri per favore)");
-    age = parseInt(age)
-
+    age = parseInt(age);
+    
     console.log("age", age, typeof age);
 
     if(isNaN(age)){
-        alert("Mi dispiace non accettiamo valori testuali, ricomincia");
+        alert("Mi dispiace non accettiamo valori testuali o campi vuoti, ricomincia");
 
         document.querySelector("#price").innerHTML = refresh;
      
